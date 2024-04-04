@@ -1,0 +1,9 @@
+{
+  "name": "weather_sounds",
+  "version": "0.0.0",
+  "description": "weather sounds homework",
+  "main": "index.js",
+  "author": "eg-bond <eg-bond@yandex.ru>",
+  "license": "MIT",
+  "private": false
+}
