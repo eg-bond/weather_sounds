@@ -12,6 +12,11 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     clean: true,
   },
+  resolve: {
+    alias: {
+      '@assets': path.resolve(__dirname, 'public', 'assets'),
+    },
+  },
   plugins: [
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'public', 'index.html'),
@@ -35,6 +40,10 @@ module.exports = {
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
+        type: 'asset/resource',
+      },
+      {
+        test: /\.(svg|jpg|jpeg)$/i,
         type: 'asset/resource',
       },
     ],
