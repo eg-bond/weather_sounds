@@ -32,6 +32,34 @@ const snowButton = createButtonNode('snow', winter_img, snow_svg)
 
 buttons.append(sunButton, rainButton, snowButton)
 
+// onclick events to play sounds
+sunButton.addEventListener('click', () => {
+  playAudio('sun', container)
+})
+rainButton.addEventListener('click', () => {
+  playAudio('rain', container)
+})
+snowButton.addEventListener('click', () => {
+  playAudio('snow', container)
+})
+
+// volume scrollbar
+const gainNode = document.createElement('input')
+gainNode.classList.add('gain_node')
+gainNode.type = 'range'
+gainNode.min = 0
+gainNode.max = 1
+gainNode.step = 0.01
+gainNode.value = 1
+container.appendChild(gainNode)
+
+gainNode.addEventListener('input', () => {
+  audios['sun'].audio.volume = gainNode.value
+  audios['rain'].audio.volume = gainNode.value
+  audios['snow'].audio.volume = gainNode.value
+})
+
+// creates button node with background img and icon and return it as a node.
 function createButtonNode(type, img_url, icon_url) {
   const buttonContainer = document.createElement('button')
   buttonContainer.value = type
@@ -45,29 +73,3 @@ function createButtonNode(type, img_url, icon_url) {
 
   return buttonContainer
 }
-
-// onclick events to play sounds
-sunButton.addEventListener('click', () => {
-  playAudio('sun', container)
-})
-rainButton.addEventListener('click', () => {
-  playAudio('rain', container)
-})
-snowButton.addEventListener('click', () => {
-  playAudio('snow', container)
-})
-
-// change audio volume using gainNode
-const gainNode = document.createElement('input')
-gainNode.classList.add('gain_node')
-gainNode.type = 'range'
-gainNode.min = 0
-gainNode.max = 1
-gainNode.step = 0.01
-gainNode.value = 1
-container.appendChild(gainNode)
-gainNode.addEventListener('input', () => {
-  audios['sun'].audio.volume = gainNode.value
-  audios['rain'].audio.volume = gainNode.value
-  audios['snow'].audio.volume = gainNode.value
-})

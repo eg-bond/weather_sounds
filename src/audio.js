@@ -27,7 +27,7 @@ function rewindAudioToStart(audioNode) {
   audioNode.currentTime = 0
 }
 
-// stars on stops playing chosen audio
+// stars and stops playing chosen audio
 function switchPlaying(audioNode) {
   if (audioNode.isPlaying) {
     audioNode.pause()
