@@ -147,3 +147,24 @@ img3_container.addEventListener('click', () => {
     container.style.backgroundImage = `url(${winter_img})`
   }
 })
+
+// change audio volume using gainNode
+const gainNode = document.createElement('input')
+gainNode.classList.add('gain_node')
+gainNode.type = 'range'
+gainNode.min = 0
+gainNode.max = 1
+gainNode.step = 0.01
+gainNode.value = 1
+container.appendChild(gainNode)
+gainNode.addEventListener('input', () => {
+  if (summer_audio.isPlaying) {
+    summer_audio.volume = gainNode.value
+  }
+  if (rain_audio.isPlaying) {
+    rain_audio.volume = gainNode.value
+  }
+  if (winter_audio.isPlaying) {
+    winter_audio.volume = gainNode.value
+  }
+})
