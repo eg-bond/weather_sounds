@@ -23,15 +23,15 @@ body {
 }
 
 .title {
-  color: #fb7422;
+  font-family: 'Roboto', sans-serif;
+  color: #f90;
   text-align: center;
   font-size: 3rem;
   margin-top: 0;
-}
 
-.title {
-  font-family: 'Roboto', sans-serif;
-  color: #f90;
+  @media (max-width: 800px) {
+    font-size: 6vw;
+  }
 }
 
 .images {
