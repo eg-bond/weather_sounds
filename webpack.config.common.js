@@ -4,7 +4,6 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CopyPlugin = require('copy-webpack-plugin')
 const ESLintWebpackPlugin = require('eslint-webpack-plugin')
 
-// config
 module.exports = {
   entry: path.resolve(__dirname, 'src', 'index.js'),
   output: {

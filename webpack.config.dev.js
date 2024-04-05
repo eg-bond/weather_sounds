@@ -8,4 +8,5 @@ module.exports = merge(commonConfig, {
     hot: true,
     open: true,
   },
+  devtool: 'eval-cheap-source-map',
 })
