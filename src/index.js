@@ -97,6 +97,7 @@ img2_container.addEventListener('click', () => {
   } else {
     summer_audio.play()
     summer_audio.isPlaying = true
+    container.style.backgroundImage = `url(${summer_img})`
   }
 })
 
@@ -120,6 +121,7 @@ img1_container.addEventListener('click', () => {
   } else {
     rain_audio.play()
     rain_audio.isPlaying = true
+    container.style.backgroundImage = `url(${rainy_img})`
   }
 })
 
@@ -142,5 +144,6 @@ img3_container.addEventListener('click', () => {
   } else {
     winter_audio.play()
     winter_audio.isPlaying = true
+    container.style.backgroundImage = `url(${winter_img})`
   }
 })
