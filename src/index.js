@@ -14,61 +14,38 @@ const root = document.getElementById('root')
 // container
 const container = document.createElement('div')
 container.classList.add('container')
-
-// container.style.backgroundColor = 'red'
 container.style.backgroundImage = `url(${summer_img})`
 root.appendChild(container)
 
 // title
 const title = document.createElement('h1')
-title.innerHTML = 'Weather sounds'
+title.innerText = 'Weather sounds'
 title.classList.add('title')
 container.appendChild(title)
 
-// images
-const images = document.createElement('div')
-images.classList.add('images')
-container.appendChild(images)
+// buttons
+const buttons = document.createElement('div')
+buttons.classList.add('buttons')
+container.appendChild(buttons)
 
-// sun img
-// const img2_button = document.createElement('button')
-// img2_button.classList.add('img_button')
+const sunButton = createButtonNode(summer_img, sun_svg)
+const rainButton = createButtonNode(rainy_img, rain_svg)
+const snowButton = createButtonNode(winter_img, snow_svg)
 
-const img2_container = document.createElement('button')
-img2_container.classList.add('img_container')
-img2_container.style.backgroundImage = `url(${summer_img})`
-// img2_button.appendChild(img2_container)
+buttons.append(sunButton, rainButton, snowButton)
 
-const img2_icon = document.createElement('img')
-img2_icon.classList.add('img_icon')
-img2_icon.src = sun_svg
-img2_container.appendChild(img2_icon)
+function createButtonNode(img_url, icon_url) {
+  const buttonContainer = document.createElement('button')
+  buttonContainer.classList.add('buttons_container')
+  buttonContainer.style.backgroundImage = `url(${img_url})`
 
-images.appendChild(img2_container)
+  const buttonIcon = document.createElement('img')
+  buttonIcon.classList.add('buttons_icon')
+  buttonIcon.src = icon_url
+  buttonContainer.appendChild(buttonIcon)
 
-// rain img
-const img1_container = document.createElement('button')
-img1_container.classList.add('img_container')
-img1_container.style.backgroundImage = `url(${rainy_img})`
-
-const img1_icon = document.createElement('img')
-img1_icon.classList.add('img_icon')
-img1_icon.src = rain_svg
-img1_container.appendChild(img1_icon)
-
-images.appendChild(img1_container)
-
-// winter img
-const img3_container = document.createElement('button')
-img3_container.classList.add('img_container')
-img3_container.style.backgroundImage = `url(${winter_img})`
-
-const img3_icon = document.createElement('img')
-img3_icon.classList.add('img_icon')
-img3_icon.src = snow_svg
-img3_container.appendChild(img3_icon)
-
-images.appendChild(img3_container)
+  return buttonContainer
+}
 
 // sounds
 let summer_audio = new Audio(summer_mp3)
@@ -79,7 +56,7 @@ let winter_audio = new Audio(winter_mp3)
 winter_audio.isPlaying = false
 
 // onclick event to play summer sound
-img2_container.addEventListener('click', () => {
+sunButton.addEventListener('click', () => {
   if (rain_audio.isPlaying || rain_audio.currentTime !== 0) {
     rain_audio.pause()
     rain_audio.isPlaying = false
@@ -102,7 +79,7 @@ img2_container.addEventListener('click', () => {
 })
 
 // onclick event to play rain sound
-img1_container.addEventListener('click', () => {
+rainButton.addEventListener('click', () => {
   if (summer_audio.isPlaying || summer_audio.currentTime !== 0) {
     summer_audio.pause()
     summer_audio.isPlaying = false
@@ -126,7 +103,7 @@ img1_container.addEventListener('click', () => {
 })
 
 // onclick event to play winter sound
-img3_container.addEventListener('click', () => {
+snowButton.addEventListener('click', () => {
   if (rain_audio.isPlaying || rain_audio.currentTime !== 0) {
     rain_audio.pause()
     rain_audio.isPlaying = false
