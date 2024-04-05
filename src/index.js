@@ -135,13 +135,7 @@ gainNode.step = 0.01
 gainNode.value = 1
 container.appendChild(gainNode)
 gainNode.addEventListener('input', () => {
-  if (summer_audio.isPlaying) {
-    summer_audio.volume = gainNode.value
-  }
-  if (rain_audio.isPlaying) {
-    rain_audio.volume = gainNode.value
-  }
-  if (winter_audio.isPlaying) {
-    winter_audio.volume = gainNode.value
-  }
+  summer_audio.volume = gainNode.value
+  rain_audio.volume = gainNode.value
+  winter_audio.volume = gainNode.value
 })
