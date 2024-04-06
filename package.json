@@ -1,9 +1,32 @@
 {
   "name": "weather_sounds",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "weather sounds homework",
   "main": "index.js",
   "author": "eg-bond <eg-bond@yandex.ru>",
   "license": "MIT",
-  "private": false
+  "private": false,
+  "scripts": {
+    "build": "webpack --config webpack.config.prod.js",
+    "build:dev": "webpack --config webpack.config.dev.js",
+    "start": "webpack serve --config webpack.config.dev.js",
+    "lint": "npx eslint **/*.js"
+  },
+  "devDependencies": {
+    "@stylistic/eslint-plugin-js": "^1.7.0",
+    "copy-webpack-plugin": "^12.0.2",
+    "css-loader": "^6.11.0",
+    "eslint": "^8.57.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-webpack-plugin": "^4.1.0",
+    "html-webpack-plugin": "^5.6.0",
+    "mini-css-extract-plugin": "^2.8.1",
+    "sass": "^1.74.1",
+    "sass-loader": "^14.1.1",
+    "webpack": "^5.91.0",
+    "webpack-bundle-analyzer": "^4.10.1",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.0.4",
+    "webpack-merge": "^5.10.0"
+  }
 }

@@ -1,0 +1,80 @@
+@font-face {
+  font-family: 'Roboto';
+  src: url('./fonts/Roboto-Black.ttf') format('truetype');
+}
+
+body {
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100%;
+  margin: 0;
+  border: 0;
+  padding-top: 1rem;
+  transition: 0.3s ease;
+}
+
+.title {
+  font-family: 'Roboto', sans-serif;
+  color: #f90;
+  text-align: center;
+  font-size: 3rem;
+  margin-top: 0;
+
+  @media (max-width: 800px) {
+    font-size: 6vw;
+  }
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-evenly;
+  width: 70%;
+  margin: 0 15%;
+
+  @media (max-width: 800px) {
+    width: 100%;
+    margin: 0;
+  }
+}
+
+.buttons_container {
+  position: relative;
+  width: 15vw;
+  height: 15vw;
+  border: solid 2px white;
+  border-radius: 1rem;
+  overflow: hidden;
+  background-size: cover;
+  background-repeat: no-repeat;
+  cursor: pointer;
+
+  @media (max-width: 800px) {
+    width: 25vw;
+    height: 25vw;
+  }
+}
+
+.buttons_icon {
+  position: absolute;
+  width: 50%;
+  top: 25%;
+  left: 25%;
+}
+
+.gain_node {
+  width: 15vw;
+  margin-top: 3rem;
+  @media (max-width: 800px) {
+    margin-top: 6vw;
+    width: 40vw;
+  }
+}
