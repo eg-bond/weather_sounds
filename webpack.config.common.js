@@ -1,7 +1,6 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const CopyPlugin = require('copy-webpack-plugin')
 const ESLintWebpackPlugin = require('eslint-webpack-plugin')
 
 module.exports = {
@@ -22,14 +21,6 @@ module.exports = {
       favicon: path.resolve(__dirname, 'public', 'favicon.ico'),
     }),
     new MiniCssExtractPlugin(),
-    new CopyPlugin({
-      patterns: [
-        {
-          from: path.resolve(__dirname, 'public', 'assets'),
-          to: path.resolve(__dirname, 'dist/assets'),
-        },
-      ],
-    }),
     new ESLintWebpackPlugin(),
   ],
   module: {
@@ -41,14 +32,23 @@ module.exports = {
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
         type: 'asset/resource',
+        generator: {
+          filename: 'assets/fonts/[name][ext]',
+        },
       },
       {
         test: /\.(svg|jpg|jpeg)$/i,
         type: 'asset/resource',
+        generator: {
+          filename: 'assets/images/[name][ext]',
+        },
       },
       {
         test: /\.mp3$/i,
         type: 'asset/resource',
+        generator: {
+          filename: 'assets/sounds/[name][ext]',
+        },
       },
     ],
   },
