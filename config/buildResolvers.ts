@@ -1,5 +1,5 @@
-import type { Configuration } from 'webpack'
 import path from 'path'
+import type { Configuration } from 'webpack'
 import type { PathsType } from './types'
 
 export function buildResolvers(paths: PathsType): Configuration['resolve'] {

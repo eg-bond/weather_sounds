@@ -1,9 +1,9 @@
 import path from 'path'
-import type { Configuration } from 'webpack'
 import { buildPlugins } from './config/buildPlugins'
 import { buildLoaders } from './config/buildLoaders'
 import { buildDevServer } from './config/buildDevServer'
 import { buildResolvers } from './config/buildResolvers'
+import type { Configuration } from 'webpack'
 import type { EnvVariablesType } from './config/types'
 
 const paths = {
