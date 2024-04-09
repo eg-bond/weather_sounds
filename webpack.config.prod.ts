@@ -1,7 +1,7 @@
 // @ts-nocheck
 import merge from 'webpack-merge'
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
-import commonConfig from './webpack.common.ts'
+import commonConfig from './webpack.common'
 
 module.exports = merge(commonConfig, {
   mode: 'production',

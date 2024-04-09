@@ -35,6 +35,7 @@ export default (env: EnvVariables_T): Configuration => {
     devServer: devServerOptions(),
     devtool: isDev ? 'eval-cheap-source-map' : 'source-map',
     resolve: {
+      extensions: ['.ts', '.js'],
       alias: {
         '@assets': path.resolve(__dirname, 'public', 'assets'),
       },

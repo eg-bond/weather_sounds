@@ -6,7 +6,7 @@ import winter_img from '@assets/winter-bg.jpg'
 import sun_svg from '@assets/icons/sun.svg'
 import rain_svg from '@assets/icons/cloud-rain.svg'
 import snow_svg from '@assets/icons/cloud-snow.svg'
-import { audios, playAudio } from './audio.ts'
+import { audios, playAudio } from './audio'
 
 const root = document.getElementById('root')
 
