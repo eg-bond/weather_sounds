@@ -6,6 +6,7 @@ import sun_svg from '@assets/icons/sun.svg'
 import rain_svg from '@assets/icons/cloud-rain.svg'
 import snow_svg from '@assets/icons/cloud-snow.svg'
 import { audios, playAudio } from './audio'
+import type { AudioKeysType } from './audio'
 
 const root = document.getElementById('root') as HTMLElement
 
@@ -54,15 +55,17 @@ gainNode.value = '1'
 container.appendChild(gainNode)
 
 gainNode.addEventListener('input', () => {
-  audios['sun'].audio.volume = +gainNode.value
-  audios['rain'].audio.volume = +gainNode.value
-  audios['snow'].audio.volume = +gainNode.value
+  audios['sun'].mp3.volume = +gainNode.value
+  audios['rain'].mp3.volume = +gainNode.value
+  audios['snow'].mp3.volume = +gainNode.value
 })
 
-type AudioType = 'sun' | 'rain' | 'snow'
-
 // creates button node with background img and icon and return it as a node.
-function createButtonNode(type: AudioType, img_url: string, icon_url: string) {
+function createButtonNode(
+  type: AudioKeysType,
+  img_url: string,
+  icon_url: string
+) {
   const buttonContainer = document.createElement('button')
   buttonContainer.value = type
   buttonContainer.classList.add('buttons_container')
