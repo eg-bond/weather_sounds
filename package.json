@@ -7,9 +7,9 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "build": "webpack --config webpack.config.prod.js",
-    "build:dev": "webpack --config webpack.config.dev.js",
-    "start": "webpack serve --config webpack.config.dev.js",
+    "build": "webpack --config webpack.config.prod.ts",
+    "build:dev": "webpack --config webpack.config.dev.ts",
+    "start": "webpack serve --config webpack.config.dev.ts",
     "lint": "npx eslint **/*.js"
   },
   "devDependencies": {
@@ -24,6 +24,7 @@
     "sass": "^1.74.1",
     "sass-loader": "^14.1.1",
     "ts-loader": "^9.5.1",
+    "ts-node": "^10.9.2",
     "typescript": "^5.4.4",
     "webpack": "^5.91.0",
     "webpack-bundle-analyzer": "^4.10.1",

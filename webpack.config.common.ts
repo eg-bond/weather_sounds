@@ -1,7 +1,8 @@
-const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const ESLintWebpackPlugin = require('eslint-webpack-plugin')
+import path from 'path'
+import HtmlWebpackPlugin from 'html-webpack-plugin'
+import MiniCssExtractPlugin from 'mini-css-extract-plugin'
+import ESLintWebpackPlugin from 'eslint-webpack-plugin'
+import type { Configuration } from 'webpack'
 
 module.exports = {
   entry: path.resolve(__dirname, 'src', 'index.ts'),

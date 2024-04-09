@@ -1,6 +1,6 @@
 // @ts-nocheck
-const commonConfig = require('./webpack.config.common')
-const { merge } = require('webpack-merge')
+import { merge } from 'webpack-merge'
+import commonConfig from './webpack.config.common.ts'
 
 module.exports = merge(commonConfig, {
   mode: 'development',
