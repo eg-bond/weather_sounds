@@ -1,4 +1,3 @@
-// @ts-nocheck
 import './styles/index.scss'
 import rainy_img from '@assets/rainy-bg.jpg'
 import summer_img from '@assets/summer-bg.jpg'
@@ -8,7 +7,7 @@ import rain_svg from '@assets/icons/cloud-rain.svg'
 import snow_svg from '@assets/icons/cloud-snow.svg'
 import { audios, playAudio } from './audio'
 
-const root = document.getElementById('root')
+const root = document.getElementById('root') as HTMLElement
 
 // container
 const container = document.createElement('div')
@@ -48,20 +47,22 @@ snowButton.addEventListener('click', () => {
 const gainNode = document.createElement('input')
 gainNode.classList.add('gain_node')
 gainNode.type = 'range'
-gainNode.min = 0
-gainNode.max = 1
-gainNode.step = 0.01
-gainNode.value = 1
+gainNode.min = '0'
+gainNode.max = '1'
+gainNode.step = '0.01'
+gainNode.value = '1'
 container.appendChild(gainNode)
 
 gainNode.addEventListener('input', () => {
-  audios['sun'].audio.volume = gainNode.value
-  audios['rain'].audio.volume = gainNode.value
-  audios['snow'].audio.volume = gainNode.value
+  audios['sun'].audio.volume = +gainNode.value
+  audios['rain'].audio.volume = +gainNode.value
+  audios['snow'].audio.volume = +gainNode.value
 })
 
+type AudioType = 'sun' | 'rain' | 'snow'
+
 // creates button node with background img and icon and return it as a node.
-function createButtonNode(type, img_url, icon_url) {
+function createButtonNode(type: AudioType, img_url: string, icon_url: string) {
   const buttonContainer = document.createElement('button')
   buttonContainer.value = type
   buttonContainer.classList.add('buttons_container')
