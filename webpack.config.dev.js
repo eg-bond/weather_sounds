@@ -1,3 +1,4 @@
+// @ts-nocheck
 const commonConfig = require('./webpack.config.common')
 const { merge } = require('webpack-merge')
 

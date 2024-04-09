@@ -1,3 +1,4 @@
+// @ts-nocheck
 import rainy_img from '@assets/rainy-bg.jpg'
 import summer_img from '@assets/summer-bg.jpg'
 import winter_img from '@assets/winter-bg.jpg'

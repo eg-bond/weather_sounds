@@ -1,3 +1,4 @@
+// @ts-nocheck
 import './styles/index.scss'
 import rainy_img from '@assets/rainy-bg.jpg'
 import summer_img from '@assets/summer-bg.jpg'
@@ -5,7 +6,7 @@ import winter_img from '@assets/winter-bg.jpg'
 import sun_svg from '@assets/icons/sun.svg'
 import rain_svg from '@assets/icons/cloud-rain.svg'
 import snow_svg from '@assets/icons/cloud-snow.svg'
-import { audios, playAudio } from './audio'
+import { audios, playAudio } from './audio.ts'
 
 const root = document.getElementById('root')
 
