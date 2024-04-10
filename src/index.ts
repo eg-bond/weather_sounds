@@ -1,5 +1,5 @@
 import './styles/index.scss'
-import { audios, playAudio } from './audio'
+import { KEYS, audios, playAudio } from './audio'
 import {
   createContainerNode,
   createSoundBtns,
@@ -25,13 +25,13 @@ btnsContainer.append(sunBtn, rainBtn, snowBtn)
 
 // onclick events for buttons to play sounds
 sunBtn.addEventListener('click', () => {
-  playAudio('sun', container)
+  playAudio(KEYS.SUN, container)
 })
 rainBtn.addEventListener('click', () => {
-  playAudio('rain', container)
+  playAudio(KEYS.RAIN, container)
 })
 snowBtn.addEventListener('click', () => {
-  playAudio('snow', container)
+  playAudio(KEYS.SNOW, container)
 })
 
 // volume control bar
@@ -39,7 +39,7 @@ const volumeControl = createVolumeControl('gain_node')
 container.appendChild(volumeControl)
 
 volumeControl.addEventListener('input', () => {
-  audios['sun'].mp3.volume = +volumeControl.value
-  audios['rain'].mp3.volume = +volumeControl.value
-  audios['snow'].mp3.volume = +volumeControl.value
+  audios[KEYS.SUN].mp3.volume = +volumeControl.value
+  audios[KEYS.RAIN].mp3.volume = +volumeControl.value
+  audios[KEYS.SNOW].mp3.volume = +volumeControl.value
 })

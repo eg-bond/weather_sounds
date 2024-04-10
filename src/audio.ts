@@ -5,21 +5,27 @@ import rain_mp3 from '@assets/sounds/rain.mp3'
 import summer_mp3 from '@assets/sounds/summer.mp3'
 import winter_mp3 from '@assets/sounds/winter.mp3'
 
-export type AudioKeysType = keyof typeof audios
+export type AudioKeysType = (typeof KEYS)[keyof typeof KEYS]
+
+export const KEYS = {
+  SUN: 'sun',
+  RAIN: 'rain',
+  SNOW: 'snow',
+} as const
 
 // store for audios and its corresponding images
 export const audios = {
-  sun: {
+  [KEYS.SUN]: {
     mp3: new Audio(summer_mp3),
     img: summer_img,
     isPlaying: false,
   },
-  rain: {
+  [KEYS.RAIN]: {
     mp3: new Audio(rain_mp3),
     img: rainy_img,
     isPlaying: false,
   },
-  snow: {
+  [KEYS.SNOW]: {
     mp3: new Audio(winter_mp3),
     img: winter_img,
     isPlaying: false,
@@ -45,14 +51,14 @@ function switchPlaying(key: AudioKeysType): void {
 
 export function playAudio(key: AudioKeysType, container: HTMLDivElement) {
   // rewinds other audios to start
-  if (key !== 'sun' && audios['sun'].mp3.currentTime !== 0) {
-    rewindAudioToStart('sun')
+  if (key !== KEYS.SUN && audios[KEYS.SUN].mp3.currentTime !== 0) {
+    rewindAudioToStart(KEYS.SUN)
   }
-  if (key !== 'rain' && audios['rain'].mp3.currentTime !== 0) {
-    rewindAudioToStart('rain')
+  if (key !== KEYS.RAIN && audios[KEYS.RAIN].mp3.currentTime !== 0) {
+    rewindAudioToStart(KEYS.RAIN)
   }
-  if (key !== 'snow' && audios['snow'].mp3.currentTime !== 0) {
-    rewindAudioToStart('snow')
+  if (key !== KEYS.SNOW && audios[KEYS.SNOW].mp3.currentTime !== 0) {
+    rewindAudioToStart(KEYS.SNOW)
   }
 
   switchPlaying(key)
